@@ -1,0 +1,10 @@
+  vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        set<int>st1(nums1.begin(),nums1.end());
+        vector<int>ans;
+        for(int num:nums2){
+            if(st1.find(num)!=st1.end()){
+                ans.push_back(num); //insert element that is inside the set1  if it is there then put inside the ans 
+                st1.erase(num); // check in set 1 if it is insert in ans then erase it from set
+            }
+        }
+        return ans;
