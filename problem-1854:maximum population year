@@ -1,17 +1,17 @@
 class Solution {
 public:
     int maximumPopulation(vector<vector<int>>& logs) {
-        vector<int>arr(101,0);
+        vector<int>arr(101,0);// we have to declare array 
         int sum=0,i;
         int max=0,year;
         for(int i=0;i<logs.size();i++){
-            int birth=logs[i][0];
-            int death=logs[i][1];
-           arr[birth-1950]++;
-           arr[death-1950]--;
+            int birth=logs[i][0]; //birth declaration in 2d
+            int death=logs[i][1]; //death declaration in 2d
+           arr[birth-1950]++; //it gives how many people live this year 
+           arr[death-1950]--; // it gives how many people died upto this year
         }
         for(int i=0;i<=100;i++){
-            sum+=arr[i];
+            sum+=arr[i]; //calculate sum
             if(sum>max){
                 max=sum;
                 year=1950+i;
