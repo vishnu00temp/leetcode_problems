@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int minStartValue(vector<int>& nums) {
+    //     int sum=0;
+    //     int minsum=0;
+    //   for(int i=0;i<nums.size();i++){
+    //     sum+=nums[i];
+    //     if(sum<=minsum){
+    //       minsum=sum;
+    //     }
+    //   }
+
+    // //   let minsum+x>=1  ==>find x ?
+    // // then x=1-minsum
+    //   return 1-minsum;
+
+
+//2nd method to solve 
+    int sum=0,minvalue=INT_MAX;
+    for(int a:nums){
+        sum+=a;
+        minvalue=min(sum,minvalue);
+    }
+    if(minvalue<0) return 1-minvalue;
+    else return 1;
+    }
